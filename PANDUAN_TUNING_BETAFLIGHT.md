@@ -473,7 +473,7 @@ flowchart TD
     MasterPick --> FF1[Test Feedforward:<br/>0.5, 1.0, 1.3, 1.5]
     FF1 --> FFPick[Pilih FF di mana<br/>gyro tepat di atas setpoint]
 
-    FFPick --> IGain[Tuning I gain:<br/>biarkan 1.0 untuk 5"]
+    FFPick --> IGain[Tuning I gain:<br/>biarkan 1.0 untuk 5 inci]
 ```
 
 #### Detail Basement Method:
@@ -723,11 +723,11 @@ flowchart LR
     BBE[Buka Blackbox Explorer] --> Open[Buka file .BFL]
     Open --> Trim[Trim log: tekan I dan O<br/>untuk set in/out point]
     Trim --> View{Pilih sinyal<br/>di panel kanan}
-    View --> Gyro["Gyro" = sinyal sudah difilter]
-    View --> GyroRaw["Gyro_Scaled" = sinyal mentah<br/>(hanya di Debug GYRO_SCALED)"]
-    View --> SP["Setpoint" = target dari stick]
-    View --> PSum["PIDsum" = output total PID"]
-    View --> Motor["Motor[0-3]" = output ke motor"]
+    View --> Gyro["<b>Gyro</b> = sinyal sudah difilter"]
+    View --> GyroRaw["<b>Gyro_Scaled</b> = sinyal mentah<br/>(hanya di Debug GYRO_SCALED)"]
+    View --> SP["<b>Setpoint</b> = target dari stick"]
+    View --> PSum["<b>PIDsum</b> = output total PID"]
+    View --> Motor["<b>Motor 0-3</b> = output ke motor"]
 ```
 
 #### Panel Sinyal Penting:
