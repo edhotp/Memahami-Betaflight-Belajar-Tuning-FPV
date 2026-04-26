@@ -12,7 +12,7 @@
 
 ## 📖 Tentang Repository Ini
 
-Repository ini berisi 5 dokumen markdown yang disusun **terstruktur dari level pemula hingga lanjut**, dilengkapi diagram **Mermaid** untuk memperjelas konsep, contoh konkret, dan referensi dari sumber-sumber terpercaya komunitas FPV (Betaflight resmi, Oscar Liang, Joshua Bardwell, dll).
+Repository ini berisi 5 dokumen markdown yang disusun **terstruktur dari level pemula hingga lanjut**, dilengkapi diagram untuk memperjelas konsep, contoh konkret, dan referensi dari sumber-sumber terpercaya komunitas FPV (Betaflight resmi, Oscar Liang, Joshua Bardwell, dll).
 
 Cocok untuk:
 - 🍼 **Pemula** yang baru terjun ke dunia FPV drone.
@@ -145,7 +145,7 @@ Silakan buka **Issue** atau kirim **Pull Request** di repository ini.
 
 ## 📜 Lisensi & Atribusi
 
-Konten **asli** dalam repository ini (tulisan, diagram Mermaid, struktur panduan) dirilis di bawah lisensi **Creative Commons Attribution 4.0 International (CC BY 4.0)** — bebas digunakan, dibagikan, dan dimodifikasi untuk tujuan apapun (termasuk komersial), **selama mencantumkan kredit** kepada **SkyfluxFPV**.
+Konten **asli** dalam repository ini (tulisan, diagram, struktur panduan) dirilis di bawah lisensi **Creative Commons Attribution 4.0 International (CC BY 4.0)** — bebas digunakan, dibagikan, dan dimodifikasi untuk tujuan apapun (termasuk komersial), **selama mencantumkan kredit** kepada **SkyfluxFPV**.
 
 Detail lisensi: <https://creativecommons.org/licenses/by/4.0/>
 

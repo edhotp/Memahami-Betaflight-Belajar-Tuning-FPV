@@ -322,7 +322,7 @@ flowchart TD
 >
 > - 📖 [BETAFLIGHT_ARCHITECTURE.md](BETAFLIGHT_ARCHITECTURE.md)
 >
-> File ini menjelaskan internal Betaflight dengan diagram Mermaid yang lengkap, mencakup main loop, sensor pipeline, motor mixer, dll. Cocok untuk yang ingin **kontribusi ke kode Betaflight** atau memahami **cara kerja firmware di level rendah**.
+> File ini menjelaskan internal Betaflight dengan diagram yang lengkap, mencakup main loop, sensor pipeline, motor mixer, dll. Cocok untuk yang ingin **kontribusi ke kode Betaflight** atau memahami **cara kerja firmware di level rendah**.
 
 ### 🌐 Sumber Eksternal
 
