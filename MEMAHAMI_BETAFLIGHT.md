@@ -222,6 +222,7 @@ Betaflight punya beberapa mode terbang yang bisa diaktifkan via **switch** di ra
 | Mode | Deskripsi | Cocok untuk |
 |---|---|---|
 | **Acro** (default) | Drone tidak self-level — full kontrol pilot | Freestyle, racing |
+| **Air Mode** | Tetap berikan koreksi PID meski throttle 0 — anti drop saat punch-out | Freestyle, racing (wajib aktif) |
 | **Angle** | Self-level — drone otomatis kembali datar saat stick lepas | Pemula, line-of-sight |
 | **Horizon** | Mix Acro & Angle — bisa flip tapi self-level di stick tengah | Transisi pemula → acro |
 | **GPS Rescue** | Auto pulang ke titik takeoff (perlu modul GPS) | Failsafe / kehilangan sinyal |
