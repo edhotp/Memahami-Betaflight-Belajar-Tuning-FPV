@@ -175,17 +175,17 @@ Juga dari **Betaflight 4.2**. Hybrid antara Betaflight Rates & Actual.
 
 ```mermaid
 flowchart TD
-    Q1{Pemula atau<br/>belum punya preferensi?}
-    Q1 -->|Ya| Actual1[✅ Pakai Actual Rates]
-    Q1 -->|Tidak| Q2{Eks-pengguna<br/>firmware KISS?}
-    Q2 -->|Ya| KISS[Pakai KISS Rates]
-    Q2 -->|Tidak| Q3{Fokus racing<br/>butuh linearitas?}
-    Q3 -->|Ya| RF[Pakai Raceflight Rates]
-    Q3 -->|Tidak| Q4{Copy rate dari<br/>pilot pro lama<br/>(pre-2020)?}
-    Q4 -->|Ya| BF[Pakai Betaflight Rates]
-    Q4 -->|Tidak| Q5{Mau Max Rate eksplisit<br/>+ kurva khas Betaflight?}
-    Q5 -->|Ya| QR[Pakai Quick Rates]
-    Q5 -->|Tidak| Actual2[✅ Pakai Actual Rates]
+    Q1{"Pemula atau<br/>belum punya preferensi?"}
+    Q1 -->|Ya| Actual1["✅ Pakai Actual Rates"]
+    Q1 -->|Tidak| Q2{"Eks-pengguna<br/>firmware KISS?"}
+    Q2 -->|Ya| KISS["Pakai KISS Rates"]
+    Q2 -->|Tidak| Q3{"Fokus racing<br/>butuh linearitas?"}
+    Q3 -->|Ya| RF["Pakai Raceflight Rates"]
+    Q3 -->|Tidak| Q4{"Copy rate dari<br/>pilot pro lama<br/>(pre-2020)?"}
+    Q4 -->|Ya| BF["Pakai Betaflight Rates"]
+    Q4 -->|Tidak| Q5{"Mau Max Rate eksplisit<br/>+ kurva khas Betaflight?"}
+    Q5 -->|Ya| QR["Pakai Quick Rates"]
+    Q5 -->|Tidak| Actual2["✅ Pakai Actual Rates"]
 ```
 
 ### 3.4 Konversi Antar Sistem
