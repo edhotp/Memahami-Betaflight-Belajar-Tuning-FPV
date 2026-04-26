@@ -1,5 +1,7 @@
 # Memahami PID Betaflight untuk Pemula
 
+> 📺 **Dibuat oleh [SkyfluxFPV](https://www.instagram.com/skyfluxfpv/)** · [Instagram](https://www.instagram.com/skyfluxfpv/) · [TikTok](https://www.tiktok.com/@skyfluxfpv)
+>
 > Panduan **super sederhana** untuk memahami apa itu **PID** di Betaflight.
 > Tanpa rumus matematika rumit — fokus pada **konsep & analogi**.
 >
@@ -333,3 +335,10 @@ Terbang lebih banyak > utak-atik PID. Jangan jatuh ke "tuning rabbit hole" terla
 
 - 📘 [Memahami Betaflight Rate untuk Pemula](MEMAHAMI_RATE.md) — pasangan PID, wajib dipahami juga!
 - 📘 [Panduan Lengkap Tuning Betaflight (Bahasa Indonesia)](PANDUAN_TUNING_BETAFLIGHT.md) — untuk yang sudah siap tuning lanjut, termasuk Blackbox analysis.
+
+---
+
+<p align="center">
+  📺 Dibuat oleh <strong>SkyfluxFPV</strong> · <a href="https://www.instagram.com/skyfluxfpv/">Instagram</a> · <a href="https://www.tiktok.com/@skyfluxfpv">TikTok</a><br/>
+  <em>Follow untuk konten FPV, build, dan tutorial lainnya!</em>
+</p>

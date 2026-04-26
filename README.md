@@ -3,6 +3,11 @@
 > Koleksi panduan **Bahasa Indonesia** untuk memahami dan tuning firmware **Betaflight** pada drone FPV.
 > Dari konsep dasar untuk pemula sampai analisa Blackbox tingkat lanjut.
 
+<p align="center">
+  <strong>📺 Dibuat oleh <a href="https://www.instagram.com/skyfluxfpv/">@skyfluxfpv</a></strong><br/>
+  <a href="https://www.instagram.com/skyfluxfpv/">Instagram</a> · <a href="https://www.tiktok.com/@skyfluxfpv">TikTok</a>
+</p>
+
 ---
 
 ## 📖 Tentang Repository Ini
@@ -138,11 +143,23 @@ Silakan buka **Issue** atau kirim **Pull Request** di repository ini.
 
 ---
 
-## 📜 Lisensi
+## 📜 Lisensi & Atribusi
 
-Konten edukasi ini dirilis di bawah lisensi **Creative Commons Attribution 4.0 International (CC BY 4.0)** — bebas digunakan, dibagikan, dan dimodifikasi untuk tujuan apapun (termasuk komersial), selama mencantumkan kredit yang sesuai.
+Konten **asli** dalam repository ini (tulisan, diagram Mermaid, struktur panduan) dirilis di bawah lisensi **Creative Commons Attribution 4.0 International (CC BY 4.0)** — bebas digunakan, dibagikan, dan dimodifikasi untuk tujuan apapun (termasuk komersial), **selama mencantumkan kredit** kepada **SkyfluxFPV**.
 
-Detail: <https://creativecommons.org/licenses/by/4.0/>
+Detail lisensi: <https://creativecommons.org/licenses/by/4.0/>
+
+### Cara Memberi Kredit
+
+Jika kamu menggunakan/membagikan konten dari repository ini, mohon sertakan atribusi seperti contoh:
+
+> Sumber: SkyfluxFPV — Memahami Betaflight & Belajar Tuning FPV
+> Instagram: @skyfluxfpv · TikTok: @skyfluxfpv
+> https://github.com/edhotp/Memahami-Betaflight-Belajar-Tuning-FPV
+
+### Konten Pihak Ketiga
+
+Kutipan, gambar, atau referensi dari sumber lain (Oscar Liang, dokumentasi Betaflight, Joshua Bardwell, dll) **tetap menjadi hak cipta pemiliknya masing-masing** dan dipakai dalam konteks **fair use** untuk tujuan edukasi. CC BY 4.0 hanya meng-cover konten asli SkyfluxFPV.
 
 ---
 
@@ -153,3 +170,11 @@ Detail: <https://creativecommons.org/licenses/by/4.0/>
 
 > 🚁 **Selamat belajar dan selamat terbang!**
 > Tuning yang baik dimulai dari pemahaman konsep, bukan dari mencontek angka pilot lain. 🎯
+
+---
+
+<p align="center">
+  <strong>Dibuat dengan ❤️ oleh SkyfluxFPV</strong><br/>
+  📷 <a href="https://www.instagram.com/skyfluxfpv/">Instagram @skyfluxfpv</a> · 🎵 <a href="https://www.tiktok.com/@skyfluxfpv">TikTok @skyfluxfpv</a><br/>
+  <em>Follow untuk konten FPV, build, dan tutorial lainnya!</em>
+</p>

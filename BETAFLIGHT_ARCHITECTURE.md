@@ -1,5 +1,7 @@
 # Betaflight Firmware — Ringkasan Arsitektur & Source Code
 
+> 📺 **Dibuat oleh [SkyfluxFPV](https://www.instagram.com/skyfluxfpv/)** · [Instagram](https://www.instagram.com/skyfluxfpv/) · [TikTok](https://www.tiktok.com/@skyfluxfpv)
+
 Tinjauan teknis komprehensif firmware flight controller [Betaflight](https://github.com/betaflight/betaflight), dihasilkan dari Tree Analysis dari sumber di `src/`.
 
 ---
@@ -401,3 +403,10 @@ Target ditemukan secara otomatis dari `src/platform/*/target/*/target.mk`.
 ## 14. Model Mental — Ringkasan Satu Kalimat
 
 > **Sebuah ISR (Interrupt Service Routine) dipicu setiap sampel gyro → scheduler menjalankan gyro → filter → PID → mixer → DSHOT, semuanya dalam satu rantai deterministik yang terikat pada interrupt tersebut; semua hal lainnya (parsing RX, OSD, blackbox, MSP, telemetri, CMS, GPS) dimasukkan secara oportunistik ke dalam sisa anggaran CPU oleh scheduler kooperatif berbasis prioritas.**
+
+---
+
+<p align="center">
+  📺 Dibuat oleh <strong>SkyfluxFPV</strong> · <a href="https://www.instagram.com/skyfluxfpv/">Instagram</a> · <a href="https://www.tiktok.com/@skyfluxfpv">TikTok</a><br/>
+  <em>Follow untuk konten FPV, build, dan tutorial lainnya!</em>
+</p>

@@ -1,5 +1,7 @@
 # Memahami Betaflight Rate untuk Pemula
 
+> 📺 **Dibuat oleh [SkyfluxFPV](https://www.instagram.com/skyfluxfpv/)** · [Instagram](https://www.instagram.com/skyfluxfpv/) · [TikTok](https://www.tiktok.com/@skyfluxfpv)
+>
 > Panduan **super sederhana** untuk memahami apa itu **Rate** di Betaflight.
 > Cocok untuk pemula yang baru terjun ke dunia FPV drone.
 >
@@ -263,3 +265,10 @@ mindmap
 
 - 📘 [Panduan Lengkap Tuning Betaflight (Bahasa Indonesia)](PANDUAN_TUNING_BETAFLIGHT.md) — sudah include tuning rate detail
 - 📘 [Memahami PID untuk Pemula](MEMAHAMI_PID.md) — pasangan Rate, wajib dipahami juga!
+
+---
+
+<p align="center">
+  📺 Dibuat oleh <strong>SkyfluxFPV</strong> · <a href="https://www.instagram.com/skyfluxfpv/">Instagram</a> · <a href="https://www.tiktok.com/@skyfluxfpv">TikTok</a><br/>
+  <em>Follow untuk konten FPV, build, dan tutorial lainnya!</em>
+</p>

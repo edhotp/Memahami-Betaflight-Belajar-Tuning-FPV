@@ -1,5 +1,7 @@
 # Memahami Betaflight untuk Pemula
 
+> 📺 **Dibuat oleh [SkyfluxFPV](https://www.instagram.com/skyfluxfpv/)** · [Instagram](https://www.instagram.com/skyfluxfpv/) · [TikTok](https://www.tiktok.com/@skyfluxfpv)
+>
 > Panduan **super sederhana** untuk memahami **apa itu Betaflight**.
 > Tanpa istilah teknis berlebihan — cocok untuk yang baru mulai dunia FPV.
 >
@@ -335,3 +337,10 @@ flowchart TD
 > 🚁 **Selamat datang di dunia FPV!** Betaflight memang punya banyak pengaturan, tapi jangan terlalu cepat utak-atik. **Terbangkan drone-mu, nikmati prosesnya**, dan tuning hanya jika perlu.
 >
 > *"Spend more time flying, that's how you know whether your quad flies good or not."* — Oscar Liang
+
+---
+
+<p align="center">
+  📺 Dibuat oleh <strong>SkyfluxFPV</strong> · <a href="https://www.instagram.com/skyfluxfpv/">Instagram</a> · <a href="https://www.tiktok.com/@skyfluxfpv">TikTok</a><br/>
+  <em>Follow untuk konten FPV, build, dan tutorial lainnya!</em>
+</p>

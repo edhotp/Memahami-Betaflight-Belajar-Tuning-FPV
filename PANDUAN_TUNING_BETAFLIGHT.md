@@ -1,5 +1,7 @@
 # Panduan Tuning Betaflight untuk FPV Drone
 
+> 📺 **Dibuat oleh [SkyfluxFPV](https://www.instagram.com/skyfluxfpv/)** · [Instagram](https://www.instagram.com/skyfluxfpv/) · [TikTok](https://www.tiktok.com/@skyfluxfpv)
+>
 > Panduan komprehensif untuk pemula hingga menengah. Berisi penjelasan parameter, langkah-langkah tuning **Rate** dan **PID**, serta tips filter dan troubleshooting.
 >
 > Referensi utama:
@@ -1065,3 +1067,10 @@ Tabel berikut merangkum hasil cross-check setiap rekomendasi penting di panduan 
 ---
 
 > 🛠️ Selamat tuning! Ingat: **drone yang terbang OK > drone yang sempurna di atas kertas**. Terbang sebanyak mungkin — itu yang akan paling meningkatkan kemampuan Anda. ✈️
+
+---
+
+<p align="center">
+  📺 Dibuat oleh <strong>SkyfluxFPV</strong> · <a href="https://www.instagram.com/skyfluxfpv/">Instagram</a> · <a href="https://www.tiktok.com/@skyfluxfpv">TikTok</a><br/>
+  <em>Follow untuk konten FPV, build, dan tutorial lainnya!</em>
+</p>
