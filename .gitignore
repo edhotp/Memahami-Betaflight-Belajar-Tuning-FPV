@@ -1,0 +1,25 @@
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Sensitive / local-only
+*.env
+.env*
+*.key
+*.pem
+secrets/
+*-private*
+
+# Build / temp
+*.log
+*.tmp
+node_modules/
+dist/
+build/
+
+# Backup
+*.bak
+*.backup
+*~
