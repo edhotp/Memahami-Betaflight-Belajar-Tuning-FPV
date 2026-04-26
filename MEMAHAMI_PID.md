@@ -21,10 +21,11 @@
 4. [Bagaimana PID Bekerja di Drone?](#4-bagaimana-pid-bekerja-di-drone)
 5. [Contoh Konkret: Drone Diserang Angin](#5-contoh-konkret-drone-diserang-angin)
 6. [Apa Itu Slider PID di Betaflight?](#6-apa-itu-slider-pid-di-betaflight)
-7. [Gejala PID Salah Setting](#7-gejala-pid-salah-setting)
-8. [Cara Tuning PID untuk Pemula](#8-cara-tuning-pid-untuk-pemula)
-9. [Kesalahan Umum Pemula](#9-kesalahan-umum-pemula)
-10. [Ringkasan](#10-ringkasan)
+7. [Parameter PID Lanjutan (FF, D_Min, TPA, dll)](#7-parameter-pid-lanjutan)
+8. [Gejala PID Salah Setting](#8-gejala-pid-salah-setting)
+9. [Cara Tuning PID untuk Pemula](#9-cara-tuning-pid-untuk-pemula)
+10. [Kesalahan Umum Pemula](#10-kesalahan-umum-pemula)
+11. [Ringkasan](#11-ringkasan)
 
 ---
 
@@ -207,9 +208,89 @@ flowchart TB
 
 ---
 
-## 7. Gejala PID Salah Setting
+## 7. Parameter PID Lanjutan
 
-### 7.1 Cara Identifikasi dari "Rasa" Terbang
+Selain P, I, D, dan slider, Betaflight punya **parameter PID lanjutan** yang sering muncul di tutorial atau forum. Pemula **tidak perlu mengubahnya** — tapi minimal harus tahu **artinya** agar tidak bingung.
+
+> 📚 **Sumber:** [Oscar Liang — PID Filter Tuning](https://oscarliang.com/pid-filter-tuning-blackbox/) · [Betaflight Wiki — PID Tuning](https://betaflight.com/docs/wiki/configurator/pid-tuning-tab) · Joshua Bardwell PID series.
+
+### 7.1 Feedforward (FF)
+
+**Fungsi:** Membuat drone **lebih responsif terhadap perubahan stick** tanpa menunggu gyro mendeteksi error dulu.
+
+- **Cara kerja:** Saat kamu gerakkan stick, FF langsung mengirim sinyal koreksi ke motor **berdasarkan kecepatan gerakan stick** (bukan menunggu drone bereaksi).
+- **Kelebihan:** Drone terasa "snappy", **mengurangi delay** antara stick dan respon.
+- **Kekurangan:** Terlalu tinggi → "kick" di awal gerakan, terasa tidak natural.
+- **Slider:** Dikontrol oleh **Stick Response** slider.
+- **Default 5":** ~120.
+
+### 7.2 D_Min (Dynamic D)
+
+**Fungsi:** Membuat **D otomatis adaptif** — rendah saat hover, tinggi saat snap (flip/roll/punch).
+
+- **Kenapa berguna:** D tinggi penting untuk **anti-overshoot** saat manuver cepat, tapi membuat **motor panas** saat hover. D_Min memberi yang terbaik dari keduanya.
+- **Cara kerja:** Saat sensor mendeteksi "demand" tinggi (stick movement cepat atau error besar), D di-boost ke nilai maksimum. Saat tenang, D turun ke `d_min`.
+- **Slider:** Dikontrol oleh **Dynamic Damping** slider (BF 4.3+).
+- **Default:** Aktif untuk semua axis di BF modern.
+
+### 7.3 TPA — Throttle PID Attenuation
+
+**Fungsi:** Menurunkan PID **secara otomatis saat throttle tinggi** untuk mencegah propwash & oscillation di high throttle.
+
+- **TPA Breakpoint:** Throttle threshold dimulainya pengurangan (default ~1350 = ~35% throttle).
+- **TPA Rate:** Seberapa banyak P/D dikurangi di throttle penuh (default ~0.65 = 65% pengurangan).
+- **Kapan diubah:** Kalau drone **oscillate hanya saat throttle punch**, naikkan TPA Rate (lebih banyak attenuation). Kalau drone terasa **lemot saat full throttle**, turunkan TPA Rate.
+- **Pemula:** **JANGAN UBAH**. Default sudah bagus.
+
+### 7.4 Anti-Gravity
+
+**Fungsi:** Menambah **I-term boost sementara** saat throttle berubah cepat (punch out / chop) untuk mencegah pitch drop/up.
+
+- **Mode:**
+  - `Smooth` (default modern) — boost halus berdasarkan rate of change throttle.
+  - `Step` (legacy) — boost on/off ala digital.
+- **Anti-Gravity Gain:** Default ~80 (BF 4.3+). Naikkan kalau drone "kick" pitch saat punch out/chop throttle.
+- **Pemula:** Biarkan default.
+
+### 7.5 I-Term Relax
+
+**Fungsi:** **Mencegah I-term akumulasi berlebihan** selama maneuver cepat (yang bisa menyebabkan bounce-back setelah flip/roll).
+
+- **Mode:**
+  - `RP` — aktif untuk Roll & Pitch (default).
+  - `RPY` — Roll, Pitch, Yaw (untuk yaw twitchy).
+  - `OFF` — tidak disarankan.
+- **I-Term Relax Cutoff:** Default ~15 Hz. Naikkan kalau drone **bounce-back** setelah flip; turunkan kalau drone **drift** saat hover.
+- **Pemula:** Biarkan `RP` + cutoff default.
+
+### 7.6 Throttle Boost
+
+**Fungsi:** Menambah **respons throttle** saat stick throttle bergerak cepat (untuk punch out lebih agresif).
+
+- **Default:** ~5 (BF 4.3+).
+- **Naikkan ke 7–10:** Punch out lebih agresif, cocok racing.
+- **Turunkan ke 0–3:** Throttle lebih halus, cocok cinematic.
+
+### 7.7 Tabel Ringkasan Parameter Lanjutan
+
+| Parameter | Fungsi Singkat | Slider yang Mengontrol | Pemula Perlu Ubah? |
+|---|---|---|---|
+| **Feedforward (FF)** | Responsivitas terhadap stick movement | Stick Response | ❌ Tidak |
+| **D_Min** | D adaptif (rendah hover, tinggi snap) | Dynamic Damping | ❌ Tidak |
+| **TPA** | Kurangi PID di throttle tinggi | — (tab terpisah) | ❌ JANGAN |
+| **Anti-Gravity** | Cegah pitch drop saat punch/chop | — | ❌ Tidak |
+| **I-Term Relax** | Cegah bounce-back setelah flip | — | ❌ Tidak |
+| **Throttle Boost** | Punch out lebih agresif | — | ❌ Tidak |
+
+> 🍼 **Pesan untuk pemula:** Parameter di atas hanya untuk **referensi pengetahuan**. Default Betaflight modern (4.3+) sudah dituning oleh tim Betaflight & komunitas pilot pro. **JANGAN diubah** kecuali kamu punya **Blackbox log** dan **tahu pasti apa yang kamu cari**.
+
+> 💡 **Quote dari Joshua Bardwell:** *"Defaults are good. Defaults are amazing. Defaults are the result of thousands of hours of testing by smarter people than you. Fly defaults until you can't anymore."*
+
+---
+
+## 8. Gejala PID Salah Setting
+
+### 8.1 Cara Identifikasi dari "Rasa" Terbang
 
 ```mermaid
 flowchart TD
@@ -222,7 +303,7 @@ flowchart TD
     Issue -->|Drone terasa delay| LowFF[Feedforward terlalu rendah]
 ```
 
-### 7.2 Tabel Cepat Diagnosa
+### 8.2 Tabel Cepat Diagnosa
 
 | Gejala | Penyebab | Solusi Slider |
 |---|---|---|
@@ -235,9 +316,9 @@ flowchart TD
 
 ---
 
-## 8. Cara Tuning PID untuk Pemula
+## 9. Cara Tuning PID untuk Pemula
 
-### 8.1 Aturan Emas Pemula
+### 9.1 Aturan Emas Pemula
 
 > 🚨 **JANGAN TUNING PID DULU JIKA:**
 > - Drone baru pertama dirakit (test default dulu!)
@@ -245,7 +326,7 @@ flowchart TD
 > - Hardware bermasalah (frame retak, prop bengkok)
 > - Belum aktifkan **RPM Filter** & **Bi-directional DShot**
 
-### 8.2 Urutan yang Benar
+### 9.2 Urutan yang Benar
 
 ```mermaid
 flowchart TD
@@ -260,7 +341,7 @@ flowchart TD
     I --> E
 ```
 
-### 8.3 Workflow Pemula Sederhana
+### 9.3 Workflow Pemula Sederhana
 
 1. **Backup CLI dulu:** Tab CLI → ketik `diff all` → simpan ke file.
 2. **Catat slider awal:** Misal Master = 1.0, Damping = 1.0, dst.
@@ -273,7 +354,7 @@ flowchart TD
 
 ---
 
-## 9. Kesalahan Umum Pemula
+## 10. Kesalahan Umum Pemula
 
 | Kesalahan | Akibat | Solusi |
 |---|---|---|
@@ -287,7 +368,7 @@ flowchart TD
 
 ---
 
-## 10. Ringkasan
+## 11. Ringkasan
 
 ```mermaid
 mindmap

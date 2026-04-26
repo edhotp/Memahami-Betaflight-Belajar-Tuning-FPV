@@ -18,12 +18,13 @@
 2. [Analogi Sederhana](#2-analogi-sederhana)
 3. [Sistem Rate di Betaflight (Pilihan & Perbandingan)](#3-sistem-rate-di-betaflight-pilihan--perbandingan)
 4. [3 Parameter Penting di Actual Rates](#4-3-parameter-penting-di-actual-rates)
-5. [Contoh Konkret: Stick vs Drone](#5-contoh-konkret-stick-vs-drone)
-6. [Rate Berdasarkan Gaya Terbang](#6-rate-berdasarkan-gaya-terbang)
-7. [Cara Setting Rate Pertama Kali](#7-cara-setting-rate-pertama-kali)
-8. [Kesalahan Umum Pemula](#8-kesalahan-umum-pemula)
-9. [Tools Bantu](#9-tools-bantu)
-10. [Ringkasan](#10-ringkasan)
+5. [Parameter Tambahan: Throttle & Yaw](#5-parameter-tambahan-throttle--yaw)
+6. [Contoh Konkret: Stick vs Drone](#6-contoh-konkret-stick-vs-drone)
+7. [Rate Berdasarkan Gaya Terbang](#7-rate-berdasarkan-gaya-terbang)
+8. [Cara Setting Rate Pertama Kali](#8-cara-setting-rate-pertama-kali)
+9. [Kesalahan Umum Pemula](#9-kesalahan-umum-pemula)
+10. [Tools Bantu](#10-tools-bantu)
+11. [Ringkasan](#11-ringkasan)
 
 ---
 
@@ -258,7 +259,83 @@ flowchart LR
 
 ---
 
-## 5. Contoh Konkret: Stick vs Drone
+## 5. Parameter Tambahan: Throttle & Yaw
+
+Selain Center Sensitivity / Max Rate / Expo, ada beberapa parameter lain di tab **Rates** Betaflight Configurator yang sering bikin pemula bingung. Berikut yang **wajib tahu**:
+
+> 📚 **Sumber:** [Oscar Liang — Throttle Mid & Expo](https://oscarliang.com/rates/#Throttle-Mid-and-Throttle-Expo) · [Betaflight Wiki — Rates Tab](https://betaflight.com/docs/wiki/configurator/rates-tab)
+
+### 5.1 Throttle Mid
+
+**Fungsi:** Menggeser **titik tengah** kurva throttle (untuk Throttle Expo).
+
+- **Nilai:** 0.0 – 1.0 (default **0.50**).
+- **Default 0.5** → kurva expo simetris di tengah stick throttle.
+- **Naikkan ke 0.6–0.8** → "stretch" area sensitif ke throttle yang lebih tinggi (cocok kalau cruising di throttle tinggi).
+- **Turunkan ke 0.2–0.3** → cocok untuk **tiny whoop / cinewhoop** yang hover di throttle rendah.
+
+> 💡 Throttle Mid **tidak berefek apa-apa** kalau Throttle Expo = 0. Selalu set bareng.
+
+### 5.2 Throttle Expo
+
+**Fungsi:** Menghaluskan kurva throttle di sekitar **Throttle Mid**.
+
+- **Nilai:** 0.0 – 1.0 (default **0.0**).
+- **0.0** → throttle linear, paling responsif.
+- **0.3–0.5** → halus untuk hover/cruising — bagus untuk **cinematic & whoop**.
+- **0.6–0.8** → sangat halus, banyak pemula whoop pakai ini agar drone lebih mudah hover.
+
+> 🍼 **Untuk pemula 5" freestyle:** biarkan default (0.0). Untuk **whoop/cinewhoop**, set Throttle Mid ~0.3 + Throttle Expo ~0.5–0.6 supaya gampang hover.
+
+### 5.3 Throttle Limit (Type & Percent)
+
+**Fungsi:** Membatasi **throttle maksimum** dari stick — berguna untuk drone overpowered atau battery drop.
+
+- **Throttle Limit Type:**
+  - `OFF` — tidak ada limit (default).
+  - `SCALE` — kurva throttle di-skala ulang (range stick penuh tapi maksimum lebih rendah).
+  - `CLIP` — throttle dipotong di nilai maksimum (stick di atas threshold tetap = nilai maksimum).
+- **Throttle Limit Percent:** 25–100% (default 100%).
+
+**Contoh penggunaan:**
+- Drone 5" overpowered untuk **cinematic** → set `SCALE` 80% agar throttle lebih halus.
+- Drone racing yang **ingin proteksi battery sag** → set `CLIP` 90%.
+
+### 5.4 Rekomendasi Yaw vs Roll/Pitch
+
+Banyak pemula bingung apakah **Yaw** harus sama dengan Roll/Pitch. Praktik umum:
+
+| Axis | Karakteristik | Rekomendasi |
+|---|---|---|
+| **Roll** | Putaran samping (sumbu depan-belakang) | Max Rate sama atau **sedikit lebih tinggi** dari Pitch (untuk roll snappy) |
+| **Pitch** | Putaran depan-belakang (sumbu kiri-kanan) | Baseline — set sama dengan Roll |
+| **Yaw** | Putaran sumbu vertikal | Max Rate **lebih rendah** (50–80% dari Roll) — yaw secara fisika memang lebih lambat karena drag prop |
+
+**Contoh praktis:**
+
+| Style | Roll/Pitch Max Rate | Yaw Max Rate |
+|---|---|---|
+| Pemula | 700 | 600 |
+| Freestyle | 1000 | 700 |
+| Racing | 1200 | 800 |
+
+> 💡 **Joshua Bardwell** sering pakai Roll & Pitch sama, dengan Yaw sekitar 70% dari nilai Roll/Pitch. **Oscar Liang** pakai Yaw ~650 untuk freestyle saat Roll/Pitch 1000.
+
+### 5.5 Tabel Ringkasan Semua Parameter Rate
+
+| Parameter | Range | Default 5" | Pengaruh |
+|---|---|---|---|
+| Center Sensitivity | 1–500 deg/s | 150–200 | Sensitivitas stick di tengah |
+| Max Rate | 1–2000 deg/s | 700–1000 | Kecepatan rotasi maksimum |
+| Expo | 0.00–1.00 | 0.50 | Halusin tengah stick |
+| Throttle Mid | 0.00–1.00 | 0.50 | Titik tengah kurva throttle |
+| Throttle Expo | 0.00–1.00 | 0.00 | Halusin throttle di sekitar Mid |
+| Throttle Limit Type | OFF/SCALE/CLIP | OFF | Cara membatasi throttle max |
+| Throttle Limit % | 25–100% | 100% | Persentase batas throttle |
+
+---
+
+## 6. Contoh Konkret: Stick vs Drone
 
 Misalkan kamu set:
 - Center Sensitivity = **150**
@@ -277,7 +354,7 @@ Misalkan kamu set:
 
 ---
 
-## 6. Rate Berdasarkan Gaya Terbang
+## 7. Rate Berdasarkan Gaya Terbang
 
 ```mermaid
 flowchart TB
@@ -302,7 +379,7 @@ flowchart TB
 
 ---
 
-## 7. Cara Setting Rate Pertama Kali
+## 8. Cara Setting Rate Pertama Kali
 
 ### Langkah-langkah:
 
@@ -339,7 +416,7 @@ Yaw:
 
 ---
 
-## 8. Kesalahan Umum Pemula
+## 9. Kesalahan Umum Pemula
 
 | Kesalahan | Akibat | Solusi |
 |---|---|---|
@@ -351,23 +428,23 @@ Yaw:
 
 ---
 
-## 9. Tools Bantu
+## 10. Tools Bantu
 
-### 9.1 Betaflight Rate Calculator (Resmi)
+### 10.1 Betaflight Rate Calculator (Resmi)
 - URL: <https://betaflight.com/docs/wiki/guides/current/Rate-Calculator>
 - Fungsi: Hitung & visualisasikan kurva rate sebelum terbang.
 
-### 9.2 Metamarc Rate Visualizer
+### 10.2 Metamarc Rate Visualizer
 - URL: <https://rates.metamarc.com/>
 - Fungsi: Bandingkan rate kamu dengan rate pilot terkenal (Bardwell, MrSteele, dll).
 
-### 9.3 Simulator FPV
+### 10.3 Simulator FPV
 - **Liftoff**, **Velocidrone**, **DRL Simulator**, **TRYP FPV** (gratis).
 - Test rate baru di simulator sebelum apply ke drone asli.
 
 ---
 
-## 10. Ringkasan
+## 11. Ringkasan
 
 ```mermaid
 mindmap
