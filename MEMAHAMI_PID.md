@@ -219,7 +219,7 @@ flowchart TD
     Issue -->|Drone lemot, drift| LowPI[P atau I terlalu rendah]
     Issue -->|Motor panas setelah terbang| HighD[D terlalu tinggi<br/>atau filter terlalu sedikit]
     Issue -->|Drone bouncy, overshoot| LowD[D terlalu rendah]
-    Issue -->|Drone terasa "delay"| LowFF[Feedforward terlalu rendah]
+    Issue -->|Drone terasa delay| LowFF[Feedforward terlalu rendah]
 ```
 
 ### 7.2 Tabel Cepat Diagnosa
