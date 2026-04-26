@@ -176,5 +176,5 @@ Kutipan, gambar, atau referensi dari sumber lain (Oscar Liang, dokumentasi Betaf
 <p align="center">
   <strong>Dibuat dengan ❤️ oleh SkyfluxFPV</strong><br/>
   📷 <a href="https://www.instagram.com/skyfluxfpv/">Instagram @skyfluxfpv</a> · 🎵 <a href="https://www.tiktok.com/@skyfluxfpv">TikTok @skyfluxfpv</a><br/>
-  <em>Follow untuk konten FPV, build, dan tutorial lainnya!</em>
+  <em>Follow untuk konten FPV</em>
 </p>

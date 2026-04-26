@@ -340,5 +340,5 @@ Terbang lebih banyak > utak-atik PID. Jangan jatuh ke "tuning rabbit hole" terla
 
 <p align="center">
   📺 Dibuat oleh <strong>SkyfluxFPV</strong> · <a href="https://www.instagram.com/skyfluxfpv/">Instagram</a> · <a href="https://www.tiktok.com/@skyfluxfpv">TikTok</a><br/>
-  <em>Follow untuk konten FPV, build, dan tutorial lainnya!</em>
+  <em>Follow untuk konten FPV</em>
 </p>
