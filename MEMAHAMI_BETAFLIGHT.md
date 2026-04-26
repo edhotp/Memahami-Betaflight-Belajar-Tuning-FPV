@@ -202,13 +202,13 @@ flowchart TB
 ```mermaid
 timeline
     title Evolusi Firmware Drone FPV
-    2010 : MultiWii<br/>Firmware pertama berbasis Arduino
-    2014 : Cleanflight<br/>Fork dari MultiWii, lebih clean
-    2015 : Betaflight lahir<br/>Fork dari Cleanflight, fokus performa racing
-    2018 : Betaflight 3.5<br/>Dynamic filter populer
-    2020 : Betaflight 4.2<br/>RPM Filter (Bi-directional DShot)
-    2023 : Betaflight 4.4<br/>Simplified Sliders, GPS Rescue baru
-    2024 : Betaflight 4.5<br/>EZ Landing, OSD Quick Menu, AT32 support
+    2010 : MultiWii : Firmware pertama berbasis Arduino
+    2014 : Cleanflight : Fork dari MultiWii, lebih clean
+    2015 : Betaflight lahir : Fork dari Cleanflight, fokus performa racing
+    2018 : Betaflight 3.5 : Dynamic filter populer
+    2020 : Betaflight 4.2 : RPM Filter (Bi-directional DShot)
+    2023 : Betaflight 4.4 : Simplified Sliders, GPS Rescue baru
+    2024 : Betaflight 4.5 : EZ Landing, OSD Quick Menu, AT32 support
 ```
 
 > **Fakta menarik:** Betaflight di-maintain oleh **komunitas sukarelawan** dari seluruh dunia — bukan perusahaan! Salah satu maintainer terkenal: **ctzsnooze**, **hydra**, **blckmn**, **SteveCEvans**, **KarateBrot**, dll.
