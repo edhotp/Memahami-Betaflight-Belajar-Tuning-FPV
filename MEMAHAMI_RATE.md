@@ -68,13 +68,13 @@ Betaflight tidak hanya punya **satu** sistem rate — ada **5 jenis** yang bisa 
 
 ### 3.1 Tabel Perbandingan Singkat
 
-| Sistem | Tahun Muncul | Parameter Utama | Cocok Untuk | Tingkat Kesulitan |
-|---|---|---|---|---|
-| **Betaflight** (default lama) | 2015 | RC Rate, Super Rate, RC Expo | Pengguna lama yang sudah hafal | ⭐⭐⭐ Susah dipahami |
-| **Raceflight** | ~2017 | Rate, Acro+, Expo | Pilot racing yang ingin linearitas | ⭐⭐ Cukup mudah |
-| **KISS** | ~2017 | RC Rate, Rate, RC Curve | Pengguna eks-firmware KISS | ⭐⭐ Cukup mudah |
-| **Actual** ⭐ | 2020 (BF 4.2) | Center Sensitivity, Max Rate, Expo | **Pemula & semua orang** | ⭐ Paling mudah |
-| **Quick Rates** | 2020 (BF 4.2) | RC Rate, Max Rate, Expo | Pengguna ingin angka pasti + kurva khas BF | ⭐⭐ Mudah |
+| Sistem | Parameter Utama | Cocok Untuk | Tingkat Kesulitan |
+|---|---|---|---|
+| **Betaflight** (legacy) | RC Rate, Super Rate, RC Expo | Pengguna lama yang sudah hafal | ⭐⭐⭐ Susah dipahami |
+| **Raceflight** | Rate, Acro+, Expo | Pilot racing yang ingin linearitas | ⭐⭐ Cukup mudah |
+| **KISS** | RC Rate, Rate, RC Curve | Pengguna eks-firmware KISS | ⭐⭐ Cukup mudah |
+| **Actual** ⭐ (default modern) | Center Sensitivity, Max Rate, Expo | **Pemula & semua orang** | ⭐ Paling mudah |
+| **Quick Rates** | RC Rate, Max Rate, Expo | Pengguna ingin angka pasti + kurva khas BF | ⭐⭐ Mudah |
 
 > 💡 **TL;DR untuk pemula:** Pakai **Actual Rates**. Itu saja. Sistem lain hanya untuk pengguna lama atau kebutuhan khusus.
 
@@ -137,7 +137,7 @@ Dari firmware **KISS FC**. Mirip Betaflight Rates tapi dengan kurva sedikit berb
 
 #### 🔹 Actual Rates ⭐ (REKOMENDASI)
 
-Diperkenalkan di **Betaflight 4.2** (2020). Dirancang agar **paling mudah dipahami manusia**.
+Diperkenalkan di **Betaflight 4.x** sebagai default modern. Dirancang agar **paling mudah dipahami manusia**.
 
 - **Center Sensitivity** (deg/s) — kecepatan rotasi saat stick di ~50% dari tengah.
 - **Max Rate** (deg/s) — kecepatan rotasi MAKSIMUM saat stick mentok.
@@ -156,7 +156,7 @@ Diperkenalkan di **Betaflight 4.2** (2020). Dirancang agar **paling mudah dipaha
 
 #### 🔹 Quick Rates
 
-Juga dari **Betaflight 4.2**. Hybrid antara Betaflight Rates & Actual.
+Juga ditambahkan di era **Betaflight 4.x**. Hybrid antara Betaflight Rates & Actual.
 
 - **RC Rate** — sensitivitas dasar (mirip Betaflight).
 - **Max Rate** (deg/s) — Max Rate eksplisit (mirip Actual).
